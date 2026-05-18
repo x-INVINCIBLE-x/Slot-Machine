@@ -15,7 +15,7 @@ public class BetUI : MonoBehaviour
 
     private void OnEnable()
     {
-        betController.OnBetChanged += HandleBetUpdate;
+        betController.OnBetUpdate += HandleBetUpdate;
     }
 
     /// <summary>
@@ -29,6 +29,6 @@ public class BetUI : MonoBehaviour
 
     private void OnDisable()
     {
-        betController.OnBetChanged -= HandleBetUpdate;
+        betController.OnBetUpdate -= HandleBetUpdate;
     }
 }

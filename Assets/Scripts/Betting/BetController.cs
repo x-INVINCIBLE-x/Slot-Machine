@@ -10,7 +10,7 @@ public class BetController : MonoBehaviour
     [SerializeField] private PlayerWallet wallet;
 
     // Event triggered whenever the bet changes, providing details about the change through BetChangeResult.
-    public event Action<BetChangeResult> OnBetChanged;
+    public event Action<BetChangeResult> OnBetUpdate;
 
     public int CurrentBet { get; private set; }
 
@@ -124,7 +124,7 @@ public class BetController : MonoBehaviour
     {
         CurrentBet = 0;
 
-        OnBetChanged?.Invoke(
+        OnBetUpdate?.Invoke(
             new BetChangeResult(CurrentBet, true, "Bet cleared.")
         );
     }
@@ -139,7 +139,7 @@ public class BetController : MonoBehaviour
     {
         var result = new BetChangeResult(CurrentBet, success, message);
 
-        OnBetChanged?.Invoke(result);
+        OnBetUpdate?.Invoke(result);
 
         if (success)
         {
