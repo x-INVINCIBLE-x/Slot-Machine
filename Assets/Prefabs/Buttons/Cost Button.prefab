@@ -149,6 +149,7 @@ GameObject:
   - component: {fileID: 8365108228467017626}
   - component: {fileID: 665551345729819966}
   - component: {fileID: 8429283155711887564}
+  - component: {fileID: 8105430913750828650}
   m_Layer: 5
   m_Name: Cost Button
   m_TagString: Untagged
@@ -257,4 +258,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 665551345729819966}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8105430913750828650}
+        m_TargetAssemblyTypeName: BetPresetButton, Assembly-CSharp
+        m_MethodName: ApplyBet
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &8105430913750828650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5834341948147506819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2041f3427259d44490fc1a1294eb9ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BetPresetButton
+  betControlsUI: {fileID: 0}
+  amountText: {fileID: 2733117606842651564}
+  betAmount: 10
