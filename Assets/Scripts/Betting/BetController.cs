@@ -17,7 +17,7 @@ public class BetController : MonoBehaviour
     private void Start()
     {
         // Initialize the current bet to zero at the start of the game.
-        ClearBet();
+        ResetBet();
     }
 
     /// <summary>
@@ -120,7 +120,7 @@ public class BetController : MonoBehaviour
     /// <summary>
     /// Resets the current bet to zero, allowing the player to start fresh with their betting.
     /// </summary>
-    public void ClearBet()
+    public void ResetBet()
     {
         CurrentBet = 0;
 

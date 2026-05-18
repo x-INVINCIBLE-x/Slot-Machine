@@ -11,8 +11,8 @@ public class PlayerWallet : MonoBehaviour
 {
     [SerializeField] private int startingBalance = 1000;
 
-    // Event triggered when the balance changes, passing the new balance as an argument
-    public event Action<int> OnBalanceChanged;
+    // Event triggered when the balance changes, passing the new balance and the delta as arguments
+    public event Action<int, int> OnBalanceChanged;
 
     public int Balance { get; private set; } = 0;
 
@@ -28,8 +28,13 @@ public class PlayerWallet : MonoBehaviour
     /// <returns>True if the money was successfully added, false otherwise.</returns>
     public bool AddMoney(int amount)
     {
+        if (amount == 0)
+        {
+            return false;
+        }
+
         Balance += amount;
-        OnBalanceChanged?.Invoke(Balance);
+        OnBalanceChanged?.Invoke(Balance, amount);
         return true;
     }
 
@@ -48,7 +53,7 @@ public class PlayerWallet : MonoBehaviour
         }
 
         Balance -= amount;
-        OnBalanceChanged?.Invoke(Balance);
+        OnBalanceChanged?.Invoke(Balance, -amount);
         return true;
     }
 
@@ -60,5 +65,12 @@ public class PlayerWallet : MonoBehaviour
     internal bool HasEnough(int amount)
     {
         return Balance >= amount;
+    }
+
+    public void ResetWallet()
+    {
+        int delta = startingBalance - Balance;
+        Balance = startingBalance;
+        OnBalanceChanged?.Invoke(Balance, delta);
     }
 }

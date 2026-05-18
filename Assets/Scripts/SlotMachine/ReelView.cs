@@ -125,4 +125,14 @@ public class ReelView : MonoBehaviour
 
         return 0;
     }
+
+    public void ResetReel()
+    {
+        isSpinning = false;
+        stopRequested = false;
+
+        Vector2 position = rectTransform.anchoredPosition;
+        position.y = 0;
+        rectTransform.anchoredPosition = position;
+    }
 }

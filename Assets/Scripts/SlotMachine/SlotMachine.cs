@@ -82,4 +82,19 @@ public sealed class SlotMachine : MonoBehaviour
         int payout = payoutEvaluator.Evaluate(currentResult, currentBet);
         OnSpinCompleted?.Invoke(currentResult, payout);
     }
+
+    public void ResetMachine()
+    {
+        if (stopRoutine != null)
+        {
+            StopCoroutine(stopRoutine);
+            stopRoutine = null;
+        }
+
+        foreach (ReelView reel in reels)
+        {
+            reel.OnSpinStopped -= HandleReelStopped;
+            reel.ResetReel();
+        }
+    }
 }

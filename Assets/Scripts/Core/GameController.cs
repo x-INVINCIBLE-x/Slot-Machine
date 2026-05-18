@@ -47,7 +47,7 @@ public class GameController : MonoBehaviour
     /// </summary>
     private void HandleBetCancelled()
     {
-        betController.ClearBet();
+        betController.ResetBet();
     }
 
     /// <summary>
@@ -58,6 +58,13 @@ public class GameController : MonoBehaviour
     private void HandleSpinCompleted(SpinResult result, int payout)
     {
         playerWallet.AddMoney(payout);
+    }
+
+    public void ResetGame()
+    {
+        slotMachine.ResetMachine();
+        betController.ResetBet();
+        playerWallet.ResetWallet();
     }
 
     private void OnDisable()
