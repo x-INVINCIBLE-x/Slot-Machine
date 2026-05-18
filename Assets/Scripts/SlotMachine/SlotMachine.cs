@@ -8,6 +8,9 @@ public sealed class SlotMachine : MonoBehaviour
     [SerializeField] private ReelGenerator reelGenerator;
     [SerializeField] private PayoutEvaluator payoutEvaluator;
 
+    // Event triggered when a spin is initiated, allowing other parts of the game to react to the start of a spin.
+    public event Action OnSpinStarted;
+
     // Event triggered when a spin is completed, providing the spin result and the calculated payout based on the current bet.
     public event Action<SpinResult, int> OnSpinCompleted;
 
@@ -27,10 +30,13 @@ public sealed class SlotMachine : MonoBehaviour
     public void StartSpin(int currentBet)
     {
         if (stopRoutine != null) { return;}
+        
+        OnSpinStarted?.Invoke();
 
         this.currentBet = currentBet;
         currentResult = reelGenerator.GenerateSpin(reels.Length);
         stoppedReels = 0;
+
 
         foreach (ReelView reel in reels)
             reel.OnSpinStopped += HandleReelStopped;

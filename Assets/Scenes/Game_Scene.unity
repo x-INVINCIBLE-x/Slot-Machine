@@ -1132,7 +1132,9 @@ GameObject:
   - component: {fileID: 282241900}
   - component: {fileID: 282241902}
   - component: {fileID: 282241901}
+  - component: {fileID: 282241905}
   - component: {fileID: 282241903}
+  - component: {fileID: 282241904}
   m_Layer: 5
   m_Name: Betting UI
   m_TagString: Untagged
@@ -1214,6 +1216,42 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BetControlsUI
   betController: {fileID: 1092432548}
+--- !u!114 &282241904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 282241899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fa07988948d3104bb35594be3434460, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BetUIAnimator
+  slotMachine: {fileID: 1832657741}
+  animator: {fileID: 282241905}
+--- !u!95 &282241905
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 282241899}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d47ee79e75cc7844d92ba125c77d1492, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &377249474 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8551133544044102896, guid: 43b78a0e773862e40a0b29fd82a36138, type: 3}
@@ -2793,6 +2831,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2596196828361051811, guid: ac9db8c6f6775b94f9f8d0b277a1afec, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 153.0667
+      objectReference: {fileID: 0}
+    - target: {fileID: 2596196828361051811, guid: ac9db8c6f6775b94f9f8d0b277a1afec, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -2839,6 +2881,10 @@ PrefabInstance:
     - target: {fileID: 2596196828361051811, guid: ac9db8c6f6775b94f9f8d0b277a1afec, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2733117606842651564, guid: ac9db8c6f6775b94f9f8d0b277a1afec, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 5834341948147506819, guid: ac9db8c6f6775b94f9f8d0b277a1afec, type: 3}
       propertyPath: m_Name
@@ -2942,6 +2988,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2596196828361051811, guid: ac9db8c6f6775b94f9f8d0b277a1afec, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 153.0667
+      objectReference: {fileID: 0}
+    - target: {fileID: 2596196828361051811, guid: ac9db8c6f6775b94f9f8d0b277a1afec, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -2988,6 +3038,10 @@ PrefabInstance:
     - target: {fileID: 2596196828361051811, guid: ac9db8c6f6775b94f9f8d0b277a1afec, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2733117606842651564, guid: ac9db8c6f6775b94f9f8d0b277a1afec, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 5834341948147506819, guid: ac9db8c6f6775b94f9f8d0b277a1afec, type: 3}
       propertyPath: m_Name
@@ -3926,7 +3980,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2596196828361051811, guid: ac9db8c6f6775b94f9f8d0b277a1afec, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 153.06667
+      value: 153.0667
       objectReference: {fileID: 0}
     - target: {fileID: 2596196828361051811, guid: ac9db8c6f6775b94f9f8d0b277a1afec, type: 3}
       propertyPath: m_SizeDelta.y
@@ -3979,6 +4033,10 @@ PrefabInstance:
     - target: {fileID: 2596196828361051811, guid: ac9db8c6f6775b94f9f8d0b277a1afec, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2733117606842651564, guid: ac9db8c6f6775b94f9f8d0b277a1afec, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 5834341948147506819, guid: ac9db8c6f6775b94f9f8d0b277a1afec, type: 3}
       propertyPath: m_Name
